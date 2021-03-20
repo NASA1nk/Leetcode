@@ -27,3 +27,18 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
   }
   return pre;
 }
+//增加头节点指针pre,方便操作
+struct ListNode* removeElements(struct ListNode* head, int val) {
+  struct ListNode* pre = (struct ListNode*)malloc(sizeof(struct ListNode));
+  struct ListNode* tmp = (struct ListNode*)malloc(sizeof(struct ListNode));
+  pre->next = head;
+  tmp->next = head;
+  while (pre->next) {
+    if (pre->next->val == val) {
+      tmp->next = tmp->next->next;
+      tmp = tmp->next;
+    }
+    pre = pre->next;
+  }
+  return tmp->next;
+}
