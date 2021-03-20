@@ -31,6 +31,7 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 struct ListNode* removeElements(struct ListNode* head, int val) {
   //   哨兵节点广泛应用于树和链表中，如伪头、标记等，通常不保存任何数据
   //   其主要目的是使链表标准化，如使链表永不为空、永不无头、简化插入和删除。
+  //   伪头
   struct ListNode* s = (struct ListNode*)malloc(sizeof(struct ListNode));
   s->next = head;
   struct ListNode* cur = head;
