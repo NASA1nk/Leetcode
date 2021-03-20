@@ -29,16 +29,20 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 }
 //增加头节点指针pre,方便操作
 struct ListNode* removeElements(struct ListNode* head, int val) {
-  struct ListNode* pre = (struct ListNode*)malloc(sizeof(struct ListNode));
-  struct ListNode* tmp = (struct ListNode*)malloc(sizeof(struct ListNode));
-  pre->next = head;
-  tmp->next = head;
-  while (pre->next) {
-    if (pre->next->val == val) {
-      tmp->next = tmp->next->next;
-      tmp = tmp->next;
+  //   哨兵节点广泛应用于树和链表中，如伪头、标记等，通常不保存任何数据
+  //   其主要目的是使链表标准化，如使链表永不为空、永不无头、简化插入和删除。
+  //   伪头
+  struct ListNode* s = (struct ListNode*)malloc(sizeof(struct ListNode));
+  s->next = head;
+  struct ListNode* cur = head;
+  struct ListNode* pre = s;
+  while (cur) {
+    if (cur->val == val) {
+      pre->next = cur->next;
+    } else {
+      pre = cur;
     }
-    pre = pre->next;
+    cur = cur->next;
   }
-  return tmp->next;
+  return s->next;
 }
