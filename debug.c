@@ -4,22 +4,6 @@ struct ListNode {
   int val;
   struct ListNode *next;
 };
-struct ListNode *removeDuplicateNodes(struct ListNode *head) {
-  struct ListNode *pre = (struct ListNode *)malloc(sizeof(struct ListNode));
-  pre->next = head;
-  //   struct ListNode* s = NULL;
-  while (head) {
-    struct ListNode *cur = head;
-    while (cur) {
-      if (head->val == cur->next->val) {
-        cur = cur->next;
-      }
-      cur = cur->next;
-    }
-    head = head->next;
-  }
-  return pre->next;
-}
 
 struct ListNode *createlinklist(int *a, int n) {
   struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
