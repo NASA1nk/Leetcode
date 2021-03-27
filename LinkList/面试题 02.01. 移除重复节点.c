@@ -13,15 +13,4 @@ struct ListNode* removeDuplicateNodes(struct ListNode* head) {
   pre->next = head;
   int* hash = (int*)malloc(sizeof(int) * 20001);
   struct ListNode* cur;
-  while (head) {
-    cur = head->next;
-    if (hash[head->val] == 0) {
-      hash[head->val] = 1;
-    } else {
-      pre->next = cur->next;
-    }
-    pre = pre->next;
-    head = head->next;
-  }
-  return pre->next;
 }
