@@ -5,8 +5,8 @@
  *     struct ListNode *next;
  * };
  */
-// 未排序链表（哈希）
-
+// 未排序链表-hash(链表元素在[0, 20000]范围内)
+// 203删除节点变种，单值变成所有节点的值
 struct ListNode* removeDuplicateNodes(struct ListNode* head) {
   struct ListNode* pre = (struct ListNode*)malloc(sizeof(struct ListNode));
   struct ListNode* s = (struct ListNode*)malloc(sizeof(struct ListNode));
