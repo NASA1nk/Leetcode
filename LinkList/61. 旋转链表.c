@@ -5,7 +5,7 @@
  *     struct ListNode *next;
  * };
  */
-// 移链表长度l时还原
+// 移链表长度l时还原(其余的取模运算)
 struct ListNode* rotateRight(struct ListNode* head, int k) {
   struct ListNode* pre = (struct ListNode*)malloc(sizeof(struct ListNode));
   pre->next = head;
