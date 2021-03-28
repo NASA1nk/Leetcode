@@ -5,6 +5,7 @@
  *     struct ListNode *next;
  * };
  */
+
 // 快慢指针找中间节点的同时用慢指针反转前半部分链表,再直接与后半比分比较
 // while (fast != null && fast.next != null) {
 //   fast = fast.next.next;
@@ -16,6 +17,7 @@
 // if (fast != null) {
 //   slow = slow.next;
 // }
+
 // o(1)空间复杂度,快慢指针,反转后半部分再比较
 // 奇数长度的中间节点可以认为是前半部分的节点，只比较后半部分长度的节点即可
 bool isPalindrome(struct ListNode* head) {
