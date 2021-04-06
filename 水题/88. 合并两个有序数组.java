@@ -17,4 +17,4 @@ class Solution {
         nums1[l--] = nums2[n1--];
       }
     }
-  }
+}
