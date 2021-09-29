@@ -28,3 +28,38 @@ class Solution {
         return traversal(A.left,B.left) && traversal(A.right,B.right);
     }
 }
+
+// class Solution {
+//     public boolean isSubStructure(TreeNode A, TreeNode B) {
+//         if(A == null || B == null){
+//             return false;
+//         }
+//         Queue<TreeNode> q = new LinkedList<>();
+//         q.offer(A);
+//         while(!q.isEmpty()){
+//             TreeNode t = q.poll();
+//             if(isSubStructureiml(t,B)){
+//                 return true;
+//             }
+//             if(t.left != null){
+//                 q.offer(t.left);
+//             }
+//             if(t.right != null){
+//                 q.offer(t.right);
+//             }
+//         }
+//         return false;
+//     }
+//     public boolean isSubStructureiml(TreeNode A,TreeNode B){
+//         if(B == null){
+//             return true;
+//         }
+//         if(A == null){
+//             return false;
+//         }
+//         if(A.val != B.val){
+//             return false;
+//         }
+//         return isSubStructureiml(A.left,B.left) && isSubStructureiml(A.right,B.right);
+//     }
+// }
